@@ -1,0 +1,67 @@
+Historia de Usuario - HU
+
+1.Definición de los Criterios de Aceptación de la HU.
+	-El proceso de login debe requerir obligatoriamente la introducción de un usuario y una contraseña válida.
+	-Se debe agregar un check de política de privacidad que el usuario debe aceptar antes de iniciar sesión.
+	-Una vez aceptada la política de privacidad, el usuario podrá acceder a la plataforma de venta online.
+
+2.Escritura en BDD Gherkin de los casos de prueba que validen la HU.
+	Feature: Modificar proceso de login con check de política de privacidad
+  	
+	Scenario Outline: Iniciar sesión con usuario y contraseña válidos y aceptar política de privacidad
+    		Given el usuario navega a la página de inicio
+    		When el usuario rellena los campos del login con correo '<mail>' y contraseña '<password>'
+  		And el usuario acepta la política de privacidad
+		Then se debe permitir el inicio de sesión y redirigir a la plataforma de venta online
+		Ejemplos:
+		|mail		|password|
+		|hola@gmail.com |12345678|
+
+3.Teniendo en cuenta que esta HU tiene implementación tanto WEB como de IOS, Android y Backend, comenta que herramientas utilizarías para validar esta HU en cada disciplina.
+		-Web: Selenium WebDriver o los DevTools del navegador utilizado.
+		-iOS: XCode para simular la implementación en diferentes dispositivos y versiones.
+		-Android: Android Emulator para probar la aplicación en diferentes dispositivos virtuales y versiones de Android.
+		-Backend: Postman
+
+4.Como QA Engineer dentro de un equipo, compártenos que ceremonias y reuniones crees que existirían durante la semana que dura el Sprint.
+	Planning: Al comienzo del Sprint para realizar estimaciones de cada tarea
+	Sprint Planning: Al comienzo del Sprint para definir y priorizar las historias de usuario
+	Daily: para ver el progeso de las tareas, impedimentos y próximas tareas.
+	Sprint Review: Al final del Sprint para demostrar que todo funciona correctamente y se ha completado el porcentaje de cobertura requerido
+	
+5.Como último paso, nos gustaría incorporar la validación de este caso de uso a nuestro plan de regresión automática.
+a.¿Qué herramientas usarías para automatizar la parte Web, IOS, Android y la parte de Backend?
+	-Web: Selenium WebDriver o Cypress para realizar las pruebas automatizadas en el navegador.
+	-iOS: XCTest o Zaptest
+	-Android: Appium o Expresso	
+	-Backend: KarateDSL o Postman
+
+b.¿Qué herramientas de CI/CD crees que se podría usar para programar el lanzamiento de la regresión de forma planificada?
+	Jenkins o Gitlab CI/CD para programar la ejecución de pruebas de regresión en un horario específico o después de la finalización de otro flujo de trabajo.
+6.El equipo de Desarrollo nos entrega un día tarde una HU prioritaria para el Producto.
+a.¿Qué estrategia tomarías?
+	-Comunicar el retraso al Product Owner y al equipo de Desarrollo para que sean conscientes de la necesidad de priorizar y ajustar el plan de pruebas.
+	-Evaluar la posibilidad de realizar pruebas rápidas y de alta prioridad únicamente en la HU, centrándose en funcionalidades críticas
+
+Prueba exploratoria y reporte de bugs
+
+Descripción del problema: Después de hacer clic en cualquiera de las opciones del menú en la pantalla "Home" de https://www.demoblaze.com, los botones se quedan atascados con la animación de haber hecho clic. Esto afecta la experiencia del usuario, ya que los botones no vuelven a su estado normal después de interactuar con ellos.
+
+Resultado esperado: Después de hacer clic en una opción del menú, los botones deben regresar a su estado normal sin quedar atascados en la animación de haber hecho clic.
+
+Clasificación del bug: Prioridad: Media
+
+Pasos para reproducir el bug:
+
+Acceder a la página de inicio de https://www.demoblaze.com.
+Desde la pantalla "Home", hacer clic en cualquier opción del menú superior.
+Observar que los botones del menú seleccionado se quedan atascados con la animación de haber hecho clic, y no regresan a su estado normal.
+Capturas de pantalla: Adjunto capturas de pantalla que muestran el estado de los botones después de hacer clic en una opción del menú.
+
+Aunque el bug no impide por completo la funcionalidad del sitio web, afecta negativamente la experiencia del usuario y la usabilidad de la plataforma.
+Impacto: Medio
+
+El bug tiene un impacto negativo en la apariencia y funcionalidad del sitio web, ya que los botones quedan visiblemente atascados con la animación después de hacer clic.
+Probabilidad de ocurrencia: Alta
+
+Dado que el bug está relacionado con una funcionalidad básica del sitio web, es probable que muchos usuarios lo encuentren al interactuar con el menú.
