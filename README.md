@@ -1,4 +1,4 @@
-# PruebaQAHiberus_Manuel_Burgos
+# PruebaQA_Manuel_Burgos
 Las pruebas han sido realizadas con Python, Selenium, Behave y Request
 
 PLAN DE PRUEBAS
